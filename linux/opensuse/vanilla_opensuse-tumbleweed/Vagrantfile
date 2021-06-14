@@ -1,0 +1,33 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = "2"
+
+VM_BOX = ENV["VM_BOX"] || "opensuse/Tumbleweed.x86_64"
+VM_RAM = ENV["VM_RAM"] || "512"
+VM_CPU = ENV["VM_CPU"] || "1"
+N = ENV["N"] || 1
+
+NAME = "opensuse-tumbleweed"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+  config.vm.box = VM_BOX
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+
+  config.vm.provider "libvirt" do |lv|
+    lv.memory = VM_RAM
+    lv.cpus = VM_CPU
+  end
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = VM_RAM
+    vb.cpus = VM_CPU
+  end
+
+  (1..N.to_i).each do |a|
+    config.vm.define "#{NAME}-#{a}" do |vm|
+      vm.vm.hostname = "#{NAME}-#{a}"
+    end
+  end
+
+end
