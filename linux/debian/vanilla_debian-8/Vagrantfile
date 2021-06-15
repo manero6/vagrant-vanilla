@@ -8,7 +8,7 @@ VM_RAM = ENV["VM_RAM"] || "512"
 VM_CPU = ENV["VM_CPU"] || "1"
 N = ENV["N"] || 1
 
-NAME = "debian-8-jessie"
+NAME = "debian8"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
