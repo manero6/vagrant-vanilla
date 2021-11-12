@@ -4,8 +4,8 @@
 VAGRANTFILE_API_VERSION = "2"
 
 VM_BOX = ENV["VM_BOX"] || "peru/windows-server-2016-standard-x64-eval"
-VM_RAM = ENV["VM_RAM"] || "512"
-VM_CPU = ENV["VM_CPU"] || "1"
+VM_RAM = ENV["VM_RAM"] || "1024"
+VM_CPU = ENV["VM_CPU"] || "2"
 N = ENV["N"] || 1
 
 NAME = "windows-server-2016"
