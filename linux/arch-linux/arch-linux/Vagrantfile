@@ -3,12 +3,12 @@
 
 VAGRANTFILE_API_VERSION = "2"
 
-VM_BOX = ENV["VM_BOX"] || "debian/stretch64"
+VM_BOX = ENV["VM_BOX"] || "archlinux/archlinux"
 VM_RAM = ENV["VM_RAM"] || "512"
 VM_CPU = ENV["VM_CPU"] || "1"
 N = ENV["N"] || 1
 
-NAME = "debian9"
+NAME = "arch-linux"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
